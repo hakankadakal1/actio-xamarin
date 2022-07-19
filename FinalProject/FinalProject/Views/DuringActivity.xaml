@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.DuringActivity"
+             BackgroundImageSource="HomePageBackground.png"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image Source="actioTitle" Margin="0,50,0,0"></Image>
+            <Label Text="Your activity has started. Have fun and don't forget to be kind and respectful to each other!" TextColor="Black" Margin="0,100,0,0" FontFamily="SegoeBold" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Button Text="END ACTIVITY"
+                    FontSize="25"
+                Margin="0,50,0,0"
+                FontFamily="SegoeBold"
+                TextColor="White" 
+                BackgroundColor="#ff6961" 
+                WidthRequest="300" HeightRequest="60" 
+                CornerRadius="25" 
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.SignUpPage"
+             BackgroundImageSource="signUpBackground.png"
+             NavigationPage.HasNavigationBar="false">
+             
+    <ContentPage.Content>
+
+        <StackLayout Padding="30" Spacing="10" VerticalOptions="Center">
+
+        <StackLayout Padding="30" Spacing="15">
+
+            <Image Source="actioTitle.png" WidthRequest="150">
+                
+            </Image>
+            <Label Text="Signup"
+                   FontFamily="SegoePlain"
+                   HorizontalTextAlignment="Center"
+               FontSize="25" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
+            <Label Text="Let's get you started!"
+                   FontFamily="SegoePlain"
+                   HorizontalTextAlignment="Center"
+               FontSize="20" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
+
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="260"
+               Margin="0,20,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="E-mail" 
+                       TextColor="Black" 
+                       FontFamily="SegoePlain"
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Email}"/>
+
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="260"
+               Margin="0,10,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Password" 
+                           TextColor="Black"
+                           FontFamily="SegoePlain"
+                           FontAttributes="None" 
+                           IsPassword="True"
+                           HorizontalOptions="FillAndExpand" 
+                           Margin="20,0,20,0"
+                           x:Name="signUpPasswordEntry"
+                           Text="{Binding Password}"/>
+
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="260"
+               Margin="0,10,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Username" 
+                       TextColor="Black"
+                       FontFamily="SegoePlain"
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="260"
+               Margin="0,10,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Date of Birth" 
+                       TextColor="Black" 
+                       FontFamily="SegoePlain"
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding DOB}"/>
+
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="260"
+               Margin="0,10,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Phone Number" 
+                       TextColor="Black"
+                       FontFamily="SegoePlain"
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding PhoneNumber}"/>
+
+                </StackLayout>
+            </Frame>
+            <Button 
+            FontFamily="SegoeBold"
+            TextColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Margin="20,20,20,0"
+            BackgroundColor="#ffaf87"
+            CornerRadius="30"
+            Text="SIGNUP"
+            Command="{Binding SignUpCommand}"
+            WidthRequest="300"
+            VerticalOptions="Fill"/>
+            <Label Text="You can sign up with" 
+                   FontFamily="SegoePlain"
+                   HorizontalTextAlignment="Center"
+                   FontSize="15" 
+                   TextColor="#0AA0f3" 
+                   Margin="5,0,0,0"></Label>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="google.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+                <ImageButton Source="facebook.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+                <ImageButton Source="twitter.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+            </StackLayout>
+            <Label HorizontalTextAlignment="Center"
+                   FontFamily="SegoePlain"
+                   Text="By signing up, you are agree with our Terms and Conditions"
+                   FontSize="15" 
+                   TextColor="#0AA0f3" 
+                   Margin="5,0,0,0"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

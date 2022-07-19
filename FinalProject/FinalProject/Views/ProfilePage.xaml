@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:fRating="clr-namespace:Rating;assembly=Rating"
+             x:Class="FinalProject.Views.ProfilePage"
+             BackgroundImageSource="mainBackground.png"
+             NavigationPage.HasNavigationBar="true"
+             NavigationPage.HasBackButton="True">
+    <NavigationPage.TitleView>
+        <Label TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20">Profile</Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Clicked="LogoutClicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" 
+                   HasShadow="True" WidthRequest="100" HeightRequest="300" Padding="20" >
+                <Image Source="profilePageIcon.png"></Image>
+            </Frame>
+            <Label x:Name="username" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
+            <Label x:Name="usernameAge" TextColor="Black" Text="24"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
+            
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="100" WidthRequest="300">
+                <Grid RowSpacing="0" ColumnSpacing="0" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" ></RowDefinition>
+                        <RowDefinition Height="50" ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" ></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Rating" TextColor="Black" HorizontalOptions="Center" Margin="0,0,60,0" FontSize="20" Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Text="Favorite Activity" TextColor="Black" HorizontalOptions="Start" Margin="0,0,0,0" FontSize="20" Grid.Column="1" Grid.Row="0"></Label>
+                    <Frame BackgroundColor="White" 
+                           BorderColor="Black" 
+                           Padding="0" 
+                           HorizontalOptions="Start"
+                           CornerRadius="30"
+                           WidthRequest="300"
+                           Margin="0,0,60,0"
+                           Grid.Column="0"
+                           Grid.Row="1">
+                        <fRating:RatingBar x:Name="ratingBar" SelectedStarValue="5"
+                               IsEnabled="False"
+                               ImageWidth="20"
+                               HorizontalOptions="Center"
+                               FlowDirection="LeftToRight"
+                               EmptyStarImage="emptyStar"
+                               FillStarImage="fillStar"
+                               />
+                    </Frame>
+                    <Frame BackgroundColor="White" 
+                           BorderColor="Black" 
+                           Padding="0" 
+                           HorizontalOptions="Start"
+                           CornerRadius="30"
+                           WidthRequest="300"
+                           Margin="0,0,60,0"
+                           Grid.Column="1"
+                           Grid.Row="1">
+                        <Label Text="Basketball" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="SegoePlain"
+                               FontSize="20" TextColor="Black"/>
+
+                    </Frame>
+                </Grid>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label Text="Recent Activities" TextColor="Black" FontSize="20" HorizontalOptions="Center" Margin="0,20,0,0"></Label>
+                
+                <ScrollView>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,5,0,0">
+                        <ListView ItemsSource="{Binding .}"
+                                  x:Name="ppActivityList"
+                                  HorizontalOptions="CenterAndExpand"
+                                  >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="0" CornerRadius="30" BackgroundColor="Transparent">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" >
+                                                <Label HorizontalTextAlignment="Center" TextColor="Black" Text="{Binding activityCategory}"></Label>
+                                                <Label HorizontalTextAlignment="Center" TextColor="Black">/</Label>
+                                                <Label HorizontalTextAlignment="Center" TextColor="Black" Text="{Binding activityDate}"></Label>
+                                                <Label HorizontalTextAlignment="Center" TextColor="Black">/</Label>
+                                                <Label HorizontalTextAlignment="Center" TextColor="Black">Rating : 5⭐</Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

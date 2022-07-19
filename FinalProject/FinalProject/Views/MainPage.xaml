@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="mainBackground.png">
+
+    <StackLayout Padding="0" VerticalOptions="Center">
+        <Image Source="myLogo.png" WidthRequest="300"></Image>
+        
+        <Label Text="Want to socialize?" TextColor="#685F64" Margin="0,50,0,0" FontFamily="SegoeBold" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Label Text="You're in the right app!" TextColor="#685F64" FontFamily="SegoePlain" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Button Text="Login" TextColor="White"
+                FontFamily="SegoeBold"
+                Margin="0,60,0,0" 
+                WidthRequest="293" HeightRequest="43" 
+                CornerRadius="25" 
+                BackgroundColor="#4CE0B3" 
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Command="{Binding Login}"/>
+        <Button Text="Signup" 
+                FontFamily="SegoeBold"
+                TextColor="White" 
+                BackgroundColor="#FFAF87" 
+                WidthRequest="293" HeightRequest="43" 
+                CornerRadius="25" 
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Command="{Binding SignUp}"/>
+    </StackLayout>
+
+</ContentPage>

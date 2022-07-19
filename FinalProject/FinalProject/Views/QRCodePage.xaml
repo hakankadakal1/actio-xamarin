@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.QRCodePage"
+             BackgroundImageSource="mainBackground.png"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing">
+    <StackLayout Spacing="20" Padding="30">
+        <Label Text="Place the QR code inside the area" TextColor="#685F64" Margin="0,0,0,0" FontFamily="SegoeBold" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+        
+    <zxing:ZXingBarcodeImageView
+        WidthRequest="300"
+        HeightRequest="300"
+        IsVisible="True"
+        x:Name="barcodeValue">
+        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                <zxcm:EncodingOptions Width="300" Height="300"/>
+            </zxing:ZXingBarcodeImageView.BarcodeOptions>
+        </zxing:ZXingBarcodeImageView>
+    <Label/>
+        <Label Text="Scanning will start automatically" TextColor="#685F64" Margin="0,0,0,0" FontFamily="SegoeBold" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+        <Button Text="Open Scanner" TextColor="White" 
+                Margin="0,0,0,0" 
+                WidthRequest="293" HeightRequest="43" 
+                CornerRadius="25" 
+                BackgroundColor="#4CE0B3" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                Clicked="scannerClicked"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "707536783440",
+    "firebase_url": "https://actio-5ec97-default-rtdb.firebaseio.com",
+    "project_id": "actio-5ec97",
+    "storage_bucket": "actio-5ec97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707536783440:android:0c581c7a9190522a3be955",
+        "android_client_info": {
+          "package_name": "FinalProject.Android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707536783440-5t9dr345ulel2p1klg8li4rtnd0391ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBOxgOxBZKB9jKezcVez5ho-nG1aIYmX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707536783440-5t9dr345ulel2p1klg8li4rtnd0391ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

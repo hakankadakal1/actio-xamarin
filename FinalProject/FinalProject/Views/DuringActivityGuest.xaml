@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.DuringActivityGuest">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Orientation="Horizontal" HorizontalOptions="Center">
+            <Image Source="actioTitle" Margin="0,50,0,0"></Image>
+            <Label Text="Your activity has started. Have fun and don't forget to be kind and respectful to each other!" TextColor="Black" Margin="0,100,0,0" FontFamily="SegoeBold" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="Only host can end the activity you are currently in. Have fun and don't forget to rate other participants!" TextColor="Black" Margin="0,100,0,0" FontFamily="SegoeBold" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

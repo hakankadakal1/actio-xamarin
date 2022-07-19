@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.ChatPage"
+             BackgroundImageSource="mainBackground.png">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Start Event" Clicked="startClicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ListView Grid.Row="0" ItemsSource="{Binding .}" x:Name="chatListView"
+				SeparatorVisibility="None" HasUnevenRows="True"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="40" Margin="10,5,10,5" Padding="10" HasShadow="True" BackgroundColor="Beige">
+                                <StackLayout>
+                                    <Label Text="{Binding username}" Margin="20,0,0,0" FontSize="20" FontFamily="SegoeBold"/>
+                                    <Label Text="{Binding userMessage}" Margin="20,0,0,0" FontSize="16" FontFamily="SegoePlain"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                            
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Grid.Row="1" Padding="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0"
+                       CornerRadius="30"
+                       Padding="8"
+                       VerticalOptions="Center"
+                       BackgroundColor="Beige">
+                    <Entry Placeholder="Start typing..."  x:Name="messageToSent"/>
+                </Frame>
+                <Button Text="Send!" BackgroundColor="#4CE0B3" CornerRadius="20" VerticalOptions="Center" Grid.Column="1" Clicked="sendButtonClicked"/>
+            </Grid>
+
+        </Grid>
+    </StackLayout>
+    
+    
+</ContentPage>

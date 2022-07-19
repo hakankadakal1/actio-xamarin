@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.HomePage"
+             Shell.NavBarIsVisible="True"
+             BackgroundImageSource="HomePageBackground.png"
+            >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="gear.png" Clicked="Settings_Clicked">
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Spacing="20" Padding="20" Grid.Row="0">
+            <StackLayout>
+                <!-- Searchbar and label layout -->
+                <Frame Padding="0" CornerRadius="20">
+                    <SearchBar Placeholder="Search for an activity"
+                           TextTransform="Lowercase"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"
+                           FontFamily="SegoePlain">
+                    </SearchBar>
+                </Frame>
+                <Label Text="Let's find you an activity!" 
+                   FontSize="20" 
+                   TextColor="Black" 
+                   HorizontalTextAlignment="Center"
+                   FontFamily="SegoeBold">
+                </Label>
+            </StackLayout>
+
+            <StackLayout>
+                <!--Categories and Scrollable button layout -->
+                <Label Text="Categories" 
+                       FontSize="25" 
+                       TextColor="Black" 
+                       FontFamily="SegoePlain">
+                </Label>
+                <ScrollView Orientation="Horizontal" 
+                        HorizontalScrollBarVisibility="Never">
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Sports" 
+                                TextColor="White" 
+                                BackgroundColor="#FFAF87" 
+                                WidthRequest="293" HeightRequest="43" 
+                                CornerRadius="25"
+                                FontFamily="SegoeBold">
+                        </Button>
+                        <Button Text="Games" 
+                                TextColor="White" 
+                                BackgroundColor="#4e80b4" 
+                                WidthRequest="293" HeightRequest="43" 
+                                CornerRadius="25"
+                                FontFamily="SegoeBold">
+                        </Button>
+                        <Button Text="Art" 
+                                TextColor="White" 
+                                BackgroundColor="#4CE0B3" 
+                                WidthRequest="293" HeightRequest="43" 
+                                CornerRadius="25"
+                                FontFamily="SegoeBold">
+                        </Button>
+                        <Button Text="Activity" 
+                                TextColor="White" 
+                                BackgroundColor="#FFAF87" 
+                                WidthRequest="293" HeightRequest="43" 
+                                CornerRadius="25"
+                                FontFamily="SegoeBold">
+                        </Button>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <!--Events and dropdown-->
+                <Label Text="Events" 
+                   FontSize="25" 
+                   TextColor="Black" 
+                   FontFamily="SegoePlain"
+                   HorizontalOptions="Start"/>
+
+            </StackLayout>
+
+            <StackLayout>
+                <!--Activity swiping controls -->
+                <CarouselView ItemsSource="{Binding .}"
+                              x:Name="myActivityList"
+                              Loop="False">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            ItemSpacing="50"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="MandatorySingle"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Frame BackgroundColor="Transparent"
+                                       Padding="0"
+                                       CornerRadius="20"
+                                       BorderColor="#FFAF87">
+                                    
+                                    <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand">
+                                        <Image Source="logo3.png"
+                                               AbsoluteLayout.LayoutBounds="1,1,1,1"
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               VerticalOptions="Start"
+                                               WidthRequest="250">
+                                        </Image>
+                                        <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1"
+                                                     AbsoluteLayout.LayoutFlags="All"
+                                                     BackgroundColor="Transparent"
+                                                     Padding="15">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="CarouselViewClicked"
+                                                                      NumberOfTapsRequired="1">
+                                                    
+                                                </TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
+                                            <Frame CornerRadius="20"
+                                               Opacity="0.9"
+                                               VerticalOptions="EndAndExpand"
+                                               HasShadow="True"
+                                               BackgroundColor="#4e80b4">
+                                                <StackLayout Spacing="10">
+                                                    <Label Text="{Binding activityDate}"
+                                                       FontFamily="SegoePlain"
+                                                       TextColor="#FFAF87"
+                                                       FontSize="20"/>
+                                                    <Label Text="{Binding activityTime}"
+                                                           FontFamily="SegoePlain"
+                                                           TextColor="#FFAF87"
+                                                           FontSize="20"/>
+                                                    <Label Text="{Binding activityCategory}"
+                                                           FontFamily="SegoePlain"
+                                                           TextColor="#FFAF87"
+                                                           FontSize="20"
+                                                           x:Name="categoryLbl"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Maximum participiant number:"
+                                                               TextColor="#FFAF87"
+                                                               FontFamily="SegoePlain"/>
+                                                        <Label Text="{Binding activityParticipiantCount}"
+                                                               TextColor="#FFAF87"
+                                                               FontFamily="SegoePlain"/>
+                                                    </StackLayout>
+                                                    
+                                                </StackLayout>
+                                            </Frame>
+
+                                        </StackLayout>
+                                    </AbsoluteLayout>
+                                </Frame>
+
+                            </ContentView>
+
+
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+
+        </StackLayout>
+        <Frame Grid.Row="0" Padding="0" BackgroundColor="Transparent"
+               HeightRequest="50"
+               CornerRadius="30"
+               Margin="0,0,5,5"
+               WidthRequest="50"
+               VerticalOptions="End"
+               HorizontalOptions="End">
+            <ImageButton Source="add.png" 
+                         BackgroundColor="#FFAF87"
+                         Command="{Binding AddActivityButton}"/>
+        </Frame>
+        
+    </Grid>
+        
+        
+    
+    
+    
+</ContentPage>

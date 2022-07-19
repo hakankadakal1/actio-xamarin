@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.ChatRoom">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="qrcode.png"
+                     Clicked="QR_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" Spacing="20" Padding="10">
+            <ListView ItemsSource="{Binding .}" x:Name="myListView"
+                      RowHeight="70"
+                      IsPullToRefreshEnabled="True"
+                      ItemSelected="myListView_ItemSelected"
+                      Refreshing="myListView_Refreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Orientation="Horizontal" Spacing="20" Grid.ColumnSpan="3">
+                                    <Frame Padding="10" CornerRadius="30" HasShadow="True">
+                                        <Image Source="people.jpg"/>    
+                                    </Frame>
+                                    
+                                    <Label Text="{Binding roomName}"
+                                               FontSize="25"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="Center"
+                                               FontFamily="SegoePlain"
+                                           TextColor="Black"/>
+                                 </StackLayout>
+                                
+                                
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+        </StackLayout>
+        <Frame Grid.Row="0"
+               VerticalOptions="End"
+               HorizontalOptions="Center"
+               Padding="0"
+               CornerRadius="20"
+               BackgroundColor="#4CE0B3"
+               Margin="0,0,0,10">
+            <Button 
+                Clicked="roomAddBtnClicked"
+                Text="Create New Room"
+                FontFamily="SegoeBold"
+                BackgroundColor="Transparent"/>
+        </Frame>
+        
+    </Grid>
+    
+</ContentPage>

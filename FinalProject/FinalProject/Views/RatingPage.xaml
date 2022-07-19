@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.RatingPage"
+             BackgroundImageSource="HomePageBackground.png"
+             xmlns:fRating="clr-namespace:Rating;assembly=Rating"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image Source="actioTitle.png" Margin="50"></Image>
+            <Label Text="Your activity has ended. We hope you had fun." TextColor="Black" Margin="0,30,0,30" FontFamily="SegoeBold" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="You can rate your experience below!" TextColor="Black" Margin="0,0,0,50" FontFamily="SegoeBold" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <fRating:RatingBar x:Name="ratingBar" SelectedStarValue="0"
+                               ImageHeight="50"
+                               ImageWidth="50"
+                               HorizontalOptions="Center"
+                               FlowDirection="LeftToRight"
+                               EmptyStarImage="emptyStar"
+                               FillStarImage="fillStar"
+                               >
+                
+            </fRating:RatingBar>
+            <Button Text="RATE" FontFamily="SegoePlain" FontSize="20" BackgroundColor="#ff6961" CornerRadius="20" Clicked="rateBtnClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

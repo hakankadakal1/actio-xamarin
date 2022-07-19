@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.LoginPage"
+             BackgroundImageSource="loginBackground.png"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="false">
+    <StackLayout Padding="20" Spacing="10">
+        <Image Source="actioTitle.png"
+               HorizontalOptions="Center"
+               WidthRequest="150"
+               Margin="0,30,0,0"/>
+
+        <Label Text="Welcome!" 
+               FontFamily="SegoeBold"
+               FontSize="25" 
+               TextColor="Black" 
+               Margin="40,50,0,0"
+               ></Label>
+        <Label Text="Log in to continue" 
+               FontFamily="SegoePlain"
+               FontSize="20" 
+               TextColor="Black" 
+               Margin="40,0,0,0"></Label>
+        <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Email"
+                       FontFamily="SegoePlain"
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+                <Frame BackgroundColor="Transparent" 
+                       HeightRequest="42" WidthRequest="42" 
+                       CornerRadius="25" Padding="0" Margin="5,5,10,5">
+                    <Image Source="envelope.png" 
+                           Aspect="AspectFill" 
+                           Margin="5">
+                        
+                    </Image>
+                </Frame>
+
+            </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,20,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Password" 
+                       FontFamily="SegoePlain"
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       IsPassword="True"
+                       x:Name="loginPasswordEntry"
+                       Text="{Binding Password}"/>
+                <Frame BackgroundColor="White" 
+                       HeightRequest="40" WidthRequest="40" 
+                       CornerRadius="30" Padding="0" Margin="5,5,10,5">
+                    <Image Source="see.png"
+                           BackgroundColor="Transparent"
+                           Aspect="AspectFill" 
+                           Margin="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="passwordImageClicked"
+                                                  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </StackLayout>
+        </Frame>
+        <Button 
+            TextColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Margin="20,30,20,10"
+            BackgroundColor="#4CE0B3"
+            CornerRadius="30"
+            Text="Login"
+            FontFamily="SegoeBold"
+            Command="{Binding LoginCommand}"
+            WidthRequest="300"
+            VerticalOptions="Fill"/>
+        <Label HorizontalOptions="End"
+               TextColor="#0AA0F3"
+               FontFamily="SegoeBold"
+               FontSize="15"
+               Text="Forgot Password?">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}">
+
+                </TapGestureRecognizer>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label Text="or login with"
+               FontFamily="SegoePlain"
+               TextColor="#0AA0F3"
+               FontSize="15"
+               Margin="0,30,0,10"
+               HorizontalTextAlignment="Center"/>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="google.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+            <ImageButton Source="facebook.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+            <ImageButton Source="twitter.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

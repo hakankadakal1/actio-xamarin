@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage  xmlns:rg="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="FinalProject.CustomControls.CustomDialog"
+               >
+    <Frame CornerRadius="30" BorderColor="Black" WidthRequest="200" HeightRequest="300">
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Wheat">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+           
+            <Label x:Name="dialogHeader" Grid.Row="0"></Label>
+            <Label x:Name="dialogContent" Grid.Row="1"></Label>
+            <Button Text="OK" Clicked="Button_Clicked" Grid.Row="2"></Button>
+
+        </Grid>
+    </Frame>
+    
+    
+</ContentPage>

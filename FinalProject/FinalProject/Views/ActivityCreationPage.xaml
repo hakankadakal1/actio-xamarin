@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.ActivityCreationPage"
+             BackgroundImageSource="HomePageBackground.png"
+             NavigationPage.HasNavigationBar="true"
+             NavigationPage.HasBackButton="True">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="20">
+            <StackLayout Padding="50" Spacing="50">
+                <StackLayout Orientation="Horizontal">
+                    <Frame Padding="0" CornerRadius="30" Opacity="0.6" HorizontalOptions="EndAndExpand" WidthRequest="300">
+                        <Picker HorizontalTextAlignment="Center"
+                                Title="Select a Category"
+                                TitleColor="MediumPurple"
+                                FontFamily="SegoePlain"
+                                x:Name="SelectCategory"
+                                SelectedItem="{Binding ActivityCategory}">
+                            
+                        </Picker>
+                    </Frame>
+                    <ImageButton Source="add.png" WidthRequest="40" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"
+                                 Clicked="ImageButton_Clicked"/>
+                </StackLayout>
+                
+                <Frame Padding="0" CornerRadius="30" Opacity="0.6">
+                    <Picker HorizontalTextAlignment="Center"
+                    Title="Participant Amount"
+                    TitleColor="MediumPurple"
+                    FontFamily="SegoePlain"
+                    x:Name="ParticipantAmount"
+                            SelectedIndex="{Binding ActivityParticipiantCount}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int16}">
+                        <x:Int16>1</x:Int16>
+                        <x:Int16>2</x:Int16>
+                        <x:Int16>3</x:Int16>
+                        <x:Int16>4</x:Int16>
+                        <x:Int16>5</x:Int16>
+                        <x:Int16>6</x:Int16>
+                        <x:Int16>7</x:Int16>
+                        <x:Int16>8</x:Int16>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <Label FontFamily="SegoeBold" Margin="0,11,0,0" FontSize="25">Select Date:</Label>
+
+                <Entry FontFamily="SegoePlain"
+                       HorizontalOptions="CenterAndExpand"
+                       x:Name="SelectDate"
+                       Placeholder="Saturday, May 28 "
+                       Text="{Binding ActivityDate}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <Label FontFamily="SegoeBold" Margin="0,11,0,0" FontSize="25">Select Time:</Label>
+                <Entry HorizontalOptions="CenterAndExpand"
+                       FontFamily="SegoePlain"
+                       x:Name="SelectTime"
+                       Placeholder="18.00"
+                       Text="{Binding ActivityTime}"/>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50" Margin="0,20,0,0">
+                <Button Text="Create Activity" FontFamily="SegoeBold" CornerRadius="30" FontSize="14" WidthRequest="140" BackgroundColor="#4CE0B3" Command="{Binding AddActivityCommand}"></Button>
+                <Button Text="Clear All" FontFamily="SegoeBold" CornerRadius="30" WidthRequest="140" BackgroundColor="#4CE0B3" Clicked="ClearAll_Clicked"></Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
